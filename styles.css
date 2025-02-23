@@ -1,0 +1,186 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Landing Page Styling */
+#landing-page {
+    margin-top: 50px;
+}
+
+/* Game Title Animations */
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #ff007f, 0 0 30px #ff7300;
+    animation: neonGlow 1.5s infinite alternate, bounceIn 1.5s ease-in-out;
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(90deg, #ff007f, #ff7300, #ff007f);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonGlow 1.5s infinite alternate, textWave 2s infinite linear, textShimmer 3s infinite linear;
+}
+
+/* Neon Glow Effect */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 10px #ff007f, 0 0 20px #ff7300; }
+    100% { text-shadow: 0 0 20px #ff007f, 0 0 40px #ff7300; }
+}
+
+/* Wavy Text Animation */
+@keyframes textWave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Shimmer Effect */
+@keyframes textShimmer {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+/* Bouncing Entrance */
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Category Buttons */
+.categories button {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: white;
+    padding: 12px 25px;
+    border: 2px solid #555;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.categories button:hover, .categories button.selected {
+    background: linear-gradient(135deg, #ff007f, #ff7300);
+    transform: scale(1.1);
+    border-color: white;
+    box-shadow: 0px 4px 15px rgba(255, 115, 0, 0.7);
+}
+
+/* Start Game Button */
+#start-game {
+    padding: 15px 35px;
+    font-size: 20px;
+    background: linear-gradient(45deg, #ff007f, #ff7300);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(255, 115, 0, 0.7);
+}
+
+#start-game:hover {
+    transform: scale(1.15);
+    box-shadow: 0px 6px 15px rgba(255, 115, 0, 0.9);
+}
+
+/* Start Button Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0px 4px 10px rgba(255, 115, 0, 0.5); }
+    50% { transform: scale(1.1); box-shadow: 0px 6px 15px rgba(255, 115, 0, 0.8); }
+    100% { transform: scale(1); box-shadow: 0px 4px 10px rgba(255, 115, 0, 0.5); }
+}
+
+/* Game Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 110px);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Card Styling */
+.card {
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border: 2px solid #444;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.card.flipped {
+    background: linear-gradient(135deg, #ff007f, #ff7300);
+    color: white;
+    transform: rotateY(180deg);
+    box-shadow: 0px 6px 20px rgba(255, 115, 0, 0.8);
+}
+
+/* Winning & Losing Messages */
+.win-message, .lose-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 1000;
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Fireworks Effect */
+.fireworks {
+    width: 100%;
+    height: 100vh;
+    background: url('https://media.giphy.com/media/3o7aD2saDZPrnxmZQs/giphy.gif') center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Fade In Animation */
+.show {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
